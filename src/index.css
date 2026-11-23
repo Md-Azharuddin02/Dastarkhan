@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Primary Palette */
+  --color-forest: #234B36;
+  --color-fresh: #648B52;
+  --color-cream: #FFFDF7;
+  --color-surface: #FFFFFF;
+  --color-saffron: #E9A23B;
+  --color-charcoal: #242820;
+  --color-muted: #77796F;
+  --color-beige: #EAE7DD;
+
+  /* Supporting Colors */
+  --color-forest-deep: #17301F;
+  --color-leaf-soft: #EFF3E8;
+  --color-saffron-soft: #FBF0DC;
+  --color-sand: #F7F2E5;
+  --color-veg: #4B7C3F;
+  --color-nonveg: #A3452F;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+    font-optical-sizing: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+  }
+
+  a[href],
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"]:not(:disabled),
+  select:not(:disabled),
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  input:disabled,
+  textarea:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
+
+.heading-hero {
+  font-size: clamp(1.5rem, 1.15rem + 2vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.heading-page {
+  font-size: clamp(1.375rem, 1.1rem + 1.4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heading-section {
+  font-size: clamp(1.125rem, 0.98rem + 0.7vw, 1.375rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.text-fluid-price {
+  font-size: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
+  line-height: 1;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

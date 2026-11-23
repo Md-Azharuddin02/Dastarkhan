@@ -1,0 +1,6 @@
+{
+  "name": "Gharana Mess",
+  "description": "Fresh, hygienic home-style Indian daily lunch & dinner mess service with affordable monthly meal plans, trial meals, and direct WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
