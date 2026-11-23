@@ -32,7 +32,8 @@ test('WEEKLY_MENU covers all 7 days matching the Dastarkhān Tiffin Services sch
 
   // Mon (Egg), Wed (Chicken), Fri (Chicken Biryani), Sat (Egg), Sun (Chicken)
   assert.equal(nonVegDayCount, 5);
-  assert.equal(WEEKLY_MENU[0].lunch[0].name, 'Soyabean Curry');
+  assert.equal(WEEKLY_MENU[0].lunch[0].name, 'Curry Badi');
+  assert.equal(WEEKLY_MENU[3].lunch[0].name, 'Soyabean Curry');
   assert.equal(WEEKLY_MENU[0].dinner[0].name, 'Egg Curry');
   assert.equal(WEEKLY_MENU[4].dinner[0].name, 'Chicken Biryani');
   assert.ok(WEEKLY_MENU[4].dinner[0].items.includes('Gulab Jamun (1)'));

@@ -4,10 +4,10 @@ import type { DayMealSchedule, ExtraItemOption } from '../types';
 /**
  * Weekly Meal Plan — Dastarkhān Tiffin Services.
  *
- * Mon: Lunch Soyabean Curry (Veg) | Dinner Egg Curry (Non-Veg)
+ * Mon: Lunch Curry Badi (Veg) | Dinner Egg Curry (Non-Veg)
  * Tue: Lunch Aloo Tahri (Veg) | Dinner Masala Chana Dal + Veg Mix Paneer Rice (Veg)
  * Wed: Lunch Chicken Curry (Non-Veg) | Dinner Chholey Masala (Veg)
- * Thu: Lunch Curry Badi (Veg) | Dinner Aloo Tahri (Veg)
+ * Thu: Lunch Soyabean Curry (Veg) | Dinner Aloo Tahri (Veg)
  * Fri: Lunch Masala Chana Dal + Veg Mix Paneer Rice (Veg) | Dinner Chicken Biryani (Non-Veg)
  * Sat: Lunch Egg Curry (Non-Veg) | Dinner Seasonal Veg + Daal (Veg)
  * Sun: Lunch Rajma Curry (Veg) | Dinner Chicken Curry (Non-Veg)
@@ -21,13 +21,13 @@ export const WEEKLY_MENU: DayMealSchedule[] = [
     lunch: [
       {
         id: 'mon-lunch-veg',
-        name: 'Soyabean Curry',
+        name: 'Curry Badi',
         diet: 'veg',
-        items: ['Soyabean Curry', 'Daal', 'Rice', 'Roti (2)'],
+        items: ['Curry Badi', 'Rice', 'Roti (2)'],
         description:
-          'Home-style soyabean curry served with comforting daal, steamed rice, and 2 soft rotis.',
+          'Traditional homestyle curry badi served warm with steamed rice and 2 soft rotis.',
         image: SITE_IMAGES.heroThali,
-        imageAlt: 'Monday lunch featuring Soyabean Curry, daal, rice, and 2 soft rotis',
+        imageAlt: 'Monday lunch featuring homestyle Curry Badi with rice and 2 rotis',
         servingWindow: SITE_CONFIG.hours.lunch,
       },
     ],
@@ -117,13 +117,13 @@ export const WEEKLY_MENU: DayMealSchedule[] = [
     lunch: [
       {
         id: 'thu-lunch-veg',
-        name: 'Curry Badi',
+        name: 'Soyabean Curry',
         diet: 'veg',
-        items: ['Curry Badi', 'Rice', 'Roti (2)'],
+        items: ['Soyabean Curry', 'Rice', 'Roti (2)'],
         description:
-          'Traditional homestyle curry badi served warm with steamed rice and 2 soft rotis.',
+          'Home-style soyabean curry served with steamed rice and 2 soft rotis.',
         image: SITE_IMAGES.heroThali,
-        imageAlt: 'Thursday lunch featuring homestyle Curry Badi with rice and 2 rotis',
+        imageAlt: 'Thursday lunch featuring Soyabean Curry with rice and 2 soft rotis',
         servingWindow: SITE_CONFIG.hours.lunch,
       },
     ],
