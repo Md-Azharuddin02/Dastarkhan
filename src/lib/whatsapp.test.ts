@@ -15,7 +15,6 @@ const SAMPLE_ORDER: OrderFormPayload = {
   orderType: 'Monthly Plan',
   selectedPlan: '2 Meals / Day — Lunch + Dinner (₹5,000/month)',
   mealPreference: 'Both',
-  foodPreference: 'Veg',
   extraItems: [
     {
       itemId: 'extra-roti',
@@ -64,14 +63,14 @@ test('formatOrderWhatsAppMessage includes all required sections and extra items'
   assert.match(msg, /Order Type: Monthly Plan/);
   assert.match(msg, /Selected Plan: 2 Meals \/ Day — Lunch \+ Dinner \(₹5,000\/month\)/);
   assert.match(msg, /Meal Preference: Both/);
-  assert.match(msg, /Food Preference: Veg/);
+  assert.doesNotMatch(msg, /Food Preference/);
   assert.match(msg, /- Whole-Wheat Tawa Roti: 4 \(Rotis\) — Price on Request/);
   assert.match(msg, /- Fresh Raita \/ Curd: 1 \(Bowls\) — Price on Request/);
   assert.match(msg, /Special Instructions: Less spicy dal please/);
   assert.match(msg, /Please confirm availability and ordering details\./);
 });
 
-test('trial orders omit the separate food preference', () => {
+test('trial orders carry Veg / Non-Veg in the plan name only', () => {
   const msg = formatOrderWhatsAppMessage({
     ...SAMPLE_ORDER,
     orderType: 'Trial Meal',

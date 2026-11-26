@@ -10,7 +10,6 @@ import {
 } from '../../lib/whatsapp';
 import { SelectDropdown, type SelectOption } from '../common/SelectDropdown';
 import type {
-  FoodPreference,
   MealPreference,
   OrderFormPayload,
   OrderType,
@@ -96,7 +95,6 @@ export function WhatsAppOrderDrawer() {
       orderType: draft.orderType,
       selectedPlan: draft.selectedPlan,
       mealPreference: draft.mealPreference,
-      foodPreference: draft.foodPreference,
       extraItems,
       specialInstructions,
     };
@@ -246,50 +244,24 @@ export function WhatsAppOrderDrawer() {
                     </div>
                   )}
 
-                  <div
-                    className={`grid gap-3 ${draft.orderType === 'Trial Meal' ? 'grid-cols-1' : 'grid-cols-2'}`}
-                  >
-                    <div>
-                      <span className="block text-xs font-medium text-charcoal">Meal</span>
-                      <div className="mt-1.5 grid grid-cols-3 gap-1 rounded-full bg-leaf-soft p-1">
-                        {(['Lunch', 'Dinner', 'Both'] as MealPreference[]).map((pref) => (
-                          <button
-                            key={pref}
-                            type="button"
-                            onClick={() => updateDraft({ mealPreference: pref })}
-                            className={`min-h-[34px] rounded-full px-1 text-[11px] font-semibold transition-colors ${
-                              draft.mealPreference === pref
-                                ? 'bg-surface text-forest shadow-xs'
-                                : 'text-muted hover:text-forest'
-                            }`}
-                          >
-                            {pref}
-                          </button>
-                        ))}
-                      </div>
+                  <div>
+                    <span className="block text-xs font-medium text-charcoal">Meal</span>
+                    <div className="mt-1.5 grid grid-cols-3 gap-1 rounded-full bg-leaf-soft p-1">
+                      {(['Lunch', 'Dinner', 'Both'] as MealPreference[]).map((pref) => (
+                        <button
+                          key={pref}
+                          type="button"
+                          onClick={() => updateDraft({ mealPreference: pref })}
+                          className={`min-h-[34px] rounded-full px-1 text-[11px] font-semibold transition-colors ${
+                            draft.mealPreference === pref
+                              ? 'bg-surface text-forest shadow-xs'
+                              : 'text-muted hover:text-forest'
+                          }`}
+                        >
+                          {pref}
+                        </button>
+                      ))}
                     </div>
-
-                    {draft.orderType !== 'Trial Meal' && (
-                      <div>
-                        <span className="block text-xs font-medium text-charcoal">Food</span>
-                        <div className="mt-1.5 grid grid-cols-2 gap-1 rounded-full bg-leaf-soft p-1">
-                          {(['Veg', 'Non-Veg'] as FoodPreference[]).map((pref) => (
-                            <button
-                              key={pref}
-                              type="button"
-                              onClick={() => updateDraft({ foodPreference: pref })}
-                              className={`min-h-[34px] rounded-full px-1 text-[11px] font-semibold transition-colors ${
-                                draft.foodPreference === pref
-                                  ? 'bg-surface text-forest shadow-xs'
-                                  : 'text-muted hover:text-forest'
-                              }`}
-                            >
-                              {pref}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">

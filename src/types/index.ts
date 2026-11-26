@@ -70,7 +70,6 @@ export interface SelectedExtraItem {
 
 export type OrderType = 'Monthly Plan' | 'Trial Meal' | 'Extra Items';
 export type MealPreference = 'Lunch' | 'Dinner' | 'Both';
-export type FoodPreference = 'Veg' | 'Non-Veg';
 
 export interface OrderFormPayload {
   customerName: string;
@@ -78,7 +77,6 @@ export interface OrderFormPayload {
   orderType: OrderType;
   selectedPlan: string;
   mealPreference: MealPreference;
-  foodPreference: FoodPreference;
   extraItems: SelectedExtraItem[];
   specialInstructions: string;
 }
@@ -116,7 +114,6 @@ export interface ServiceOffering {
     orderType: OrderType;
     selectedPlan: string;
     mealPreference: MealPreference;
-    foodPreference: FoodPreference;
   };
 }
 

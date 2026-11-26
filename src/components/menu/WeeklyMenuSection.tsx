@@ -36,7 +36,6 @@ export function WeeklyMenuSection() {
           ? 'Trial Meal (₹150 Non-Veg)'
           : 'Trial Meal (₹100 Veg)',
       mealPreference: slot,
-      foodPreference: meal.diet === 'non-veg' ? 'Non-Veg' : 'Veg',
     });
   };
 

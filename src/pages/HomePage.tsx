@@ -169,7 +169,6 @@ export function HomePage() {
                               ? 'Trial Meal (₹150 Non-Veg)'
                               : 'Trial Meal (₹100 Veg)',
                           mealPreference: slot,
-                          foodPreference: meal.diet === 'non-veg' ? 'Non-Veg' : 'Veg',
                         })
                       }
                       className="inline-flex min-h-[36px] shrink-0 items-center rounded-full border border-forest bg-surface px-3.5 py-1 text-xs font-semibold text-forest transition-colors hover:bg-forest hover:text-white active:scale-[0.98] whitespace-nowrap"

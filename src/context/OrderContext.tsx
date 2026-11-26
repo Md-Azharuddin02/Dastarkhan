@@ -1,12 +1,11 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { EXTRA_ITEMS_CATALOG } from '../data/menu';
-import type { FoodPreference, MealPreference, OrderType, SelectedExtraItem } from '../types';
+import type { MealPreference, OrderType, SelectedExtraItem } from '../types';
 
 export interface OrderDrawerDraft {
   orderType: OrderType;
   selectedPlan: string;
   mealPreference: MealPreference;
-  foodPreference: FoodPreference;
 }
 
 interface OrderContextValue {
@@ -28,7 +27,6 @@ const DEFAULT_DRAFT: OrderDrawerDraft = {
   orderType: 'Monthly Plan',
   selectedPlan: '2 Meals / Day — Lunch + Dinner (₹5,000/month)',
   mealPreference: 'Both',
-  foodPreference: 'Veg',
 };
 
 const OrderContext = createContext<OrderContextValue | null>(null);

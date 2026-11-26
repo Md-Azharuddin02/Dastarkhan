@@ -31,7 +31,6 @@ export function PricingSection({ compactHeader = false }: PricingSectionProps) {
         orderType: 'Trial Meal',
         selectedPlan: 'Trial Meal (₹100 Veg)',
         mealPreference: 'Lunch',
-        foodPreference: 'Veg',
       });
       return;
     }
@@ -45,7 +44,6 @@ export function PricingSection({ compactHeader = false }: PricingSectionProps) {
       orderType: 'Monthly Plan',
       selectedPlan: planLabel,
       mealPreference: plan.defaultMealPreference,
-      foodPreference: 'Veg',
     });
   };
 

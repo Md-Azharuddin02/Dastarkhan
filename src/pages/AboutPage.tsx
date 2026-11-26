@@ -106,7 +106,6 @@ export default function AboutPage() {
                 orderType: 'Trial Meal',
                 selectedPlan: 'Trial Meal (₹100 Veg)',
                 mealPreference: 'Lunch',
-                foodPreference: 'Veg',
               })
             }
             className="inline-flex min-h-[42px] items-center justify-center rounded-full bg-forest px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-forest-deep"

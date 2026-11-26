@@ -21,7 +21,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Monthly Plan',
       selectedPlan: '1 Meal / Day — Lunch or Dinner (₹3,000/month)',
       mealPreference: 'Lunch',
-      foodPreference: 'Veg',
     },
   },
   {
@@ -43,7 +42,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Monthly Plan',
       selectedPlan: '2 Meals / Day — Lunch + Dinner (₹5,000/month)',
       mealPreference: 'Both',
-      foodPreference: 'Veg',
     },
   },
   {
@@ -65,7 +63,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Trial Meal',
       selectedPlan: 'Trial Meal (₹100 Veg)',
       mealPreference: 'Lunch',
-      foodPreference: 'Veg',
     },
   },
   {
@@ -87,7 +84,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Monthly Plan',
       selectedPlan: '2 Meals / Day — Lunch + Dinner (₹5,000/month)',
       mealPreference: 'Both',
-      foodPreference: 'Veg',
     },
   },
   {
@@ -109,7 +105,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Trial Meal',
       selectedPlan: 'Trial Meal (₹150 Non-Veg)',
       mealPreference: 'Dinner',
-      foodPreference: 'Non-Veg',
     },
   },
   {
@@ -131,7 +126,6 @@ export const SERVICE_OFFERINGS: ServiceOffering[] = [
       orderType: 'Extra Items',
       selectedPlan: 'Extra Food Request',
       mealPreference: 'Lunch',
-      foodPreference: 'Veg',
     },
   },
 ];
