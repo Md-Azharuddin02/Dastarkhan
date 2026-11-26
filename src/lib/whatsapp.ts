@@ -49,9 +49,12 @@ export function formatOrderWhatsAppMessage(payload: OrderFormPayload): string {
     `Selected Plan: ${payload.selectedPlan || 'Custom Extra Items Request'}`,
     '',
     `Meal Preference: ${payload.mealPreference}`,
-    '',
-    `Food Preference: ${payload.foodPreference}`,
   ];
+
+  // Trial plans already name Veg / Non-Veg, so a separate preference could contradict it.
+  if (payload.orderType !== 'Trial Meal') {
+    lines.push('', `Food Preference: ${payload.foodPreference}`);
+  }
 
   if (payload.extraItems.length > 0) {
     lines.push('', 'Additional Items:');

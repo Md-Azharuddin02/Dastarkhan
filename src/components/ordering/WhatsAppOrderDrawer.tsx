@@ -80,15 +80,9 @@ export function WhatsAppOrderDrawer() {
 
   const handleOrderTypeChange = (nextType: OrderType) => {
     const defaultPlan = PLAN_OPTIONS[nextType][0].value;
-    const nextFood: FoodPreference =
-      nextType === 'Trial Meal' && defaultPlan.includes('Non-Veg')
-        ? 'Non-Veg'
-        : draft.foodPreference;
-
     updateDraft({
       orderType: nextType,
       selectedPlan: defaultPlan,
-      foodPreference: nextFood,
     });
     setReadyOrder(null);
   };
@@ -246,20 +240,15 @@ export function WhatsAppOrderDrawer() {
                         labelId="order-selected-plan-label"
                         value={draft.selectedPlan}
                         options={PLAN_OPTIONS[draft.orderType]}
-                        onChange={(nextPlan) => {
-                          const nextFood: FoodPreference = nextPlan.includes('Non-Veg')
-                            ? 'Non-Veg'
-                            : nextPlan.includes('Veg')
-                              ? 'Veg'
-                              : draft.foodPreference;
-                          updateDraft({ selectedPlan: nextPlan, foodPreference: nextFood });
-                        }}
+                        onChange={(nextPlan) => updateDraft({ selectedPlan: nextPlan })}
                         className="mt-1.5"
                       />
                     </div>
                   )}
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div
+                    className={`grid gap-3 ${draft.orderType === 'Trial Meal' ? 'grid-cols-1' : 'grid-cols-2'}`}
+                  >
                     <div>
                       <span className="block text-xs font-medium text-charcoal">Meal</span>
                       <div className="mt-1.5 grid grid-cols-3 gap-1 rounded-full bg-leaf-soft p-1">
@@ -280,25 +269,27 @@ export function WhatsAppOrderDrawer() {
                       </div>
                     </div>
 
-                    <div>
-                      <span className="block text-xs font-medium text-charcoal">Food</span>
-                      <div className="mt-1.5 grid grid-cols-2 gap-1 rounded-full bg-leaf-soft p-1">
-                        {(['Veg', 'Non-Veg'] as FoodPreference[]).map((pref) => (
-                          <button
-                            key={pref}
-                            type="button"
-                            onClick={() => updateDraft({ foodPreference: pref })}
-                            className={`min-h-[34px] rounded-full px-1 text-[11px] font-semibold transition-colors ${
-                              draft.foodPreference === pref
-                                ? 'bg-surface text-forest shadow-xs'
-                                : 'text-muted hover:text-forest'
-                            }`}
-                          >
-                            {pref}
-                          </button>
-                        ))}
+                    {draft.orderType !== 'Trial Meal' && (
+                      <div>
+                        <span className="block text-xs font-medium text-charcoal">Food</span>
+                        <div className="mt-1.5 grid grid-cols-2 gap-1 rounded-full bg-leaf-soft p-1">
+                          {(['Veg', 'Non-Veg'] as FoodPreference[]).map((pref) => (
+                            <button
+                              key={pref}
+                              type="button"
+                              onClick={() => updateDraft({ foodPreference: pref })}
+                              className={`min-h-[34px] rounded-full px-1 text-[11px] font-semibold transition-colors ${
+                                draft.foodPreference === pref
+                                  ? 'bg-surface text-forest shadow-xs'
+                                  : 'text-muted hover:text-forest'
+                              }`}
+                            >
+                              {pref}
+                            </button>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">

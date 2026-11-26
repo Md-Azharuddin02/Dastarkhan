@@ -7,6 +7,7 @@ import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { FloatingExtrasBar } from './components/ordering/FloatingExtrasBar';
+import { FloatingWhatsAppButton } from './components/ordering/FloatingWhatsAppButton';
 import { WhatsAppOrderDrawer } from './components/ordering/WhatsAppOrderDrawer';
 import { OrderProvider } from './context/OrderContext';
 import { RouterProvider, useRouter } from './lib/router';
@@ -60,6 +61,7 @@ function AppRoutes() {
       </div>
 
       <FloatingExtrasBar />
+      <FloatingWhatsAppButton />
       <MobileBottomNav />
       <WhatsAppOrderDrawer />
     </div>

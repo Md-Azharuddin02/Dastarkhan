@@ -5,10 +5,10 @@ import type { DayMealSchedule, ExtraItemOption } from '../types';
  * Weekly Meal Plan — Dastarkhān Tiffin Services.
  *
  * Mon: Lunch Curry Badi (Veg) | Dinner Egg Curry (Non-Veg)
- * Tue: Lunch Aloo Tahri (Veg) | Dinner Masala Chana Dal + Veg Mix Paneer Rice (Veg)
+ * Tue: Lunch Aloo Tahri (Veg) | Dinner Veg Mix Paneer Rice + Masala Chana Dal (Veg)
  * Wed: Lunch Chicken Curry (Non-Veg) | Dinner Chholey Masala (Veg)
  * Thu: Lunch Soyabean Curry (Veg) | Dinner Aloo Tahri (Veg)
- * Fri: Lunch Masala Chana Dal + Veg Mix Paneer Rice (Veg) | Dinner Chicken Biryani (Non-Veg)
+ * Fri: Lunch Veg Mix Paneer Rice + Masala Chana Dal (Veg) | Dinner Chicken Biryani (Non-Veg)
  * Sat: Lunch Egg Curry (Non-Veg) | Dinner Seasonal Veg + Daal (Veg)
  * Sun: Lunch Rajma Curry (Veg) | Dinner Chicken Curry (Non-Veg)
  */
@@ -66,13 +66,13 @@ export const WEEKLY_MENU: DayMealSchedule[] = [
     dinner: [
       {
         id: 'tue-dinner-veg',
-        name: 'Masala Chana Dal',
+        name: 'Veg Mix Paneer Rice',
         diet: 'veg',
-        items: ['Masala Chana Dal', 'Veg Mix Paneer Rice', 'Roti (2)'],
+        items: ['Veg Mix Paneer Rice', 'Masala Chana Dal', 'Roti (2)'],
         description:
-          'Flavorful masala chana dal paired with veg mix paneer rice and 2 fresh rotis.',
+          'Veg mix paneer rice paired with flavorful masala chana dal and 2 fresh rotis.',
         image: SITE_IMAGES.rajmaChole,
-        imageAlt: 'Tuesday dinner with Masala Chana Dal, veg mix paneer rice, and 2 rotis',
+        imageAlt: 'Tuesday dinner with veg mix paneer rice, Masala Chana Dal, and 2 rotis',
         servingWindow: SITE_CONFIG.hours.dinner,
       },
     ],
@@ -149,13 +149,13 @@ export const WEEKLY_MENU: DayMealSchedule[] = [
     lunch: [
       {
         id: 'fri-lunch-veg',
-        name: 'Masala Chana Dal',
+        name: 'Veg Mix Paneer Rice',
         diet: 'veg',
-        items: ['Masala Chana Dal', 'Veg Mix Paneer Rice', 'Roti (2)'],
+        items: ['Veg Mix Paneer Rice', 'Masala Chana Dal', 'Roti (2)'],
         description:
-          'Spiced masala chana dal paired with veg mix paneer rice and 2 soft rotis.',
+          'Veg mix paneer rice paired with spiced masala chana dal and 2 soft rotis.',
         image: SITE_IMAGES.rajmaChole,
-        imageAlt: 'Friday lunch with Masala Chana Dal, veg mix paneer rice, and 2 rotis',
+        imageAlt: 'Friday lunch with veg mix paneer rice, Masala Chana Dal, and 2 rotis',
         servingWindow: SITE_CONFIG.hours.lunch,
       },
     ],
@@ -215,11 +215,11 @@ export const WEEKLY_MENU: DayMealSchedule[] = [
         id: 'sun-lunch-veg',
         name: 'Rajma Curry',
         diet: 'veg',
-        items: ['Rajma Curry', 'Rice', 'Roti (2)'],
+        items: ['Rajma Curry', 'Jeera Rice', 'Roti (2)'],
         description:
-          'Slow-cooked Sunday rajma curry paired with fluffy steamed rice and 2 soft rotis.',
+          'Slow-cooked Sunday rajma curry paired with fragrant jeera rice and 2 soft rotis.',
         image: SITE_IMAGES.rajmaChole,
-        imageAlt: 'Sunday lunch featuring Rajma Curry with steamed rice and 2 rotis',
+        imageAlt: 'Sunday lunch featuring Rajma Curry with jeera rice and 2 rotis',
         servingWindow: SITE_CONFIG.hours.lunch,
       },
     ],

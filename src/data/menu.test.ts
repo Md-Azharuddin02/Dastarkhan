@@ -35,6 +35,9 @@ test('WEEKLY_MENU covers all 7 days matching the Dastarkhān Tiffin Services sch
   assert.equal(WEEKLY_MENU[0].lunch[0].name, 'Curry Badi');
   assert.equal(WEEKLY_MENU[3].lunch[0].name, 'Soyabean Curry');
   assert.equal(WEEKLY_MENU[0].dinner[0].name, 'Egg Curry');
+  assert.equal(WEEKLY_MENU[1].dinner[0].name, 'Veg Mix Paneer Rice');
+  assert.equal(WEEKLY_MENU[4].lunch[0].name, 'Veg Mix Paneer Rice');
+  assert.ok(WEEKLY_MENU[6].lunch[0].items.includes('Jeera Rice'));
   assert.equal(WEEKLY_MENU[4].dinner[0].name, 'Chicken Biryani');
   assert.ok(WEEKLY_MENU[4].dinner[0].items.includes('Gulab Jamun (1)'));
   assert.equal(WEEKLY_MENU[6].lunch[0].name, 'Rajma Curry');

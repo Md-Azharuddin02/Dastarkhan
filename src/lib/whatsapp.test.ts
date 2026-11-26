@@ -71,6 +71,16 @@ test('formatOrderWhatsAppMessage includes all required sections and extra items'
   assert.match(msg, /Please confirm availability and ordering details\./);
 });
 
+test('trial orders omit the separate food preference', () => {
+  const msg = formatOrderWhatsAppMessage({
+    ...SAMPLE_ORDER,
+    orderType: 'Trial Meal',
+    selectedPlan: 'Trial Meal (₹150 Non-Veg)',
+  });
+  assert.doesNotMatch(msg, /Food Preference/);
+  assert.match(msg, /Trial Meal \(₹150 Non-Veg\)/);
+});
+
 test('buildWhatsAppUrl creates properly encoded wa.me URL', () => {
   const msg = formatOrderWhatsAppMessage(SAMPLE_ORDER);
   const url = buildWhatsAppUrl(msg, '+91 8750606581');
